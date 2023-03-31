@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:background="@color/bgBlack"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+<TextView
+    android:id="@+id/timer"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="@string/temp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:textAlignment="center"
+    android:textSize="40sp"
+    android:padding="10dp"
+    android:textColor="@color/white"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/timer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonLayout">
+        <TextView
+            android:id="@+id/noOfTask"
+            android:text="@string/noOfTask"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:id="@+id/fixedTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fixedTask"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+
+<com.google.android.flexbox.FlexboxLayout
+    android:id="@+id/buttonLayout"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/timer"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_marginTop="200dp"
+    app:flexDirection="row"
+    app:justifyContent="space_around">
+    <Button
+        android:id="@+id/startStopButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/startAndStop"
+        android:background="@drawable/buttton_shape"
+        android:textAllCaps="false" />
+    <Button
+        android:id="@+id/resumePauseButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/resumeAndStop"
+        android:background="@drawable/buttton_shape"
+        android:textAllCaps="false"/>
+
+</com.google.android.flexbox.FlexboxLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/bottomnavigation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_value"
+        app:itemIconSize="45dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
